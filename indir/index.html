@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>MuverAI — Yapay Zekâ ile Şarkı Yap</title>
+<meta name="description" content="Aklındakini anlat, MuverAI şarkıya dönüştürsün. Arabeskten trape, meyhaneden düğün girişine; Türkçe yapay zekâ müzik stüdyosu cebinde." />
+<meta name="theme-color" content="#3a1020" />
+<meta property="og:title" content="MuverAI — Yapay Zekâ ile Şarkı Yap" />
+<meta property="og:description" content="Aklındakini anlat, MuverAI şarkıya dönüştürsün." />
+<meta property="og:image" content="https://coderwrld.github.io/muverai-legal/indir/img/og.jpg" />
+<meta property="og:url" content="https://coderwrld.github.io/muverai-legal/indir/" />
+<meta property="og:type" content="website" />
+<meta name="apple-itunes-app" content="app-id=6810834934" />
+<link rel="icon" href="img/icon.png" />
+<style>
+  :root {
+    --bg: #2a0b17;
+    --bg-2: #4a1328;
+    --card: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.12);
+    --text: #fbf3ea;
+    --muted: #d8c3c9;
+    --accent: #a9dbe8;
+    --accent-ink: #1c0710;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 700px at 50% -10%, #8a2a4b 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 55%, #1a0610 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
+  a { color: inherit; }
+
+  .hero { text-align: center; padding: 56px 0 24px; }
+  .icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+  h1 {
+    font-size: clamp(2.1rem, 7vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 24px 0 12px;
+    font-weight: 800;
+  }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 34ch; margin: 0 auto 28px; }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--text); color: var(--accent-ink);
+    padding: 14px 26px; border-radius: 16px;
+    text-decoration: none; font-weight: 700; font-size: 1.05rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    transition: transform .15s ease;
+  }
+  .cta:active { transform: scale(.97); }
+  .cta svg { width: 26px; height: 26px; }
+  .cta small { display: block; font-weight: 500; font-size: .72rem; opacity: .75; line-height: 1; }
+  .cta span { text-align: left; line-height: 1.15; }
+  .note { color: var(--muted); font-size: .85rem; margin-top: 12px; }
+
+  .shots {
+    display: flex; gap: 14px; justify-content: center;
+    margin: 36px -16px 8px; padding: 0 16px 8px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+  }
+  .shots img {
+    width: 200px; flex: 0 0 auto; border-radius: 26px;
+    border: 1px solid var(--border); scroll-snap-align: center;
+    box-shadow: 0 16px 40px rgba(0,0,0,.4);
+  }
+  @media (max-width: 640px) { .shots { justify-content: flex-start; } .shots img { width: 64vw; } }
+
+  h2 { font-size: 1.5rem; margin: 48px 0 16px; text-align: center; letter-spacing: -0.01em; }
+  .steps { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
+  .step {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 18px;
+  }
+  .step b { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+  .step .n {
+    display: inline-grid; place-items: center; width: 28px; height: 28px;
+    border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+    font-weight: 800; font-size: .9rem; margin-bottom: 10px;
+  }
+  .step p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  .genres { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 640px) { .genres { grid-template-columns: repeat(2, 1fr); } }
+  .genre { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 1; border: 1px solid var(--border); }
+  .genre img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .genre span {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 10px 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,.75));
+    font-weight: 700; font-size: .95rem;
+  }
+
+  .bottom { text-align: center; margin-top: 48px; }
+  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 48px; }
+  footer a { color: var(--muted); margin: 0 8px; }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <img class="icon" src="img/icon.png" alt="MuverAI" width="96" height="96" />
+    <h1>Aklındakini anlat,<br />şarkın olsun.</h1>
+    <p class="lead">Bir fikir, bir anı ya da birkaç kelime… MuverAI onu sözleri ve müziğiyle gerçek bir şarkıya dönüştürür.</p>
+    <a class="cta" href="https://apps.apple.com/tr/app/id6810834934" data-cta="hero">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.64c-.02-2.28 1.86-3.38 1.95-3.43-1.06-1.55-2.71-1.76-3.3-1.79-1.4-.14-2.74.83-3.45.83-.72 0-1.81-.81-2.98-.79-1.53.02-2.94.89-3.73 2.26-1.59 2.76-.41 6.84 1.14 9.08.76 1.1 1.66 2.33 2.84 2.28 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.21.87-1.27 1.22-2.51 1.24-2.57-.03-.01-2.37-.91-2.38-3.63zM14.1 5.94c.63-.76 1.05-1.82.94-2.87-.9.04-2 .6-2.65 1.36-.58.67-1.09 1.75-.95 2.78 1 .08 2.03-.51 2.66-1.27z"/></svg>
+      <span><small>App Store'dan</small>İndir</span>
+    </a>
+    <p class="note">iPhone için · Türkçe</p>
+
+    <div class="shots">
+      <img src="img/s1.jpg" alt="Aklındakini anlat ekranı" loading="lazy" />
+      <img src="img/s2.jpg" alt="MuverAI ekran görüntüsü" loading="lazy" />
+      <img src="img/s3.jpg" alt="MuverAI ekran görüntüsü" loading="lazy" />
+    </div>
+  </section>
+
+  <h2>Üç adımda şarkın hazır</h2>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><b>Anlat ya da yaz</b><p>Şarkının konusunu birkaç cümleyle anlat ya da sözleri kendin yaz.</p></div>
+    <div class="step"><div class="n">2</div><b>Türünü seç</b><p>Arabesk, trap, pop, rock, oyun havası… Hangi tarzda olacağına sen karar ver.</p></div>
+    <div class="step"><div class="n">3</div><b>Dinle ve paylaş</b><p>Yaklaşık bir dakikada şarkın hazır. Dinle, kaydet, sevdiklerinle paylaş.</p></div>
+  </div>
+
+  <h2>Her duyguya bir tarz</h2>
+  <div class="genres">
+    <div class="genre"><img src="img/meyhane.jpg" alt="" loading="lazy" /><span>Meyhane</span></div>
+    <div class="genre"><img src="img/damar-arabesk.jpg" alt="" loading="lazy" /><span>Damar Arabesk</span></div>
+    <div class="genre"><img src="img/turkce-trap.jpg" alt="" loading="lazy" /><span>Türkçe Trap</span></div>
+    <div class="genre"><img src="img/dugun-giris.jpg" alt="" loading="lazy" /><span>Düğün Girişi</span></div>
+    <div class="genre"><img src="img/anadolu-rock.jpg" alt="" loading="lazy" /><span>Anadolu Rock</span></div>
+    <div class="genre"><img src="img/dogum-gunu.jpg" alt="" loading="lazy" /><span>Doğum Günü</span></div>
+    <div class="genre"><img src="img/yazlik-pop.jpg" alt="" loading="lazy" /><span>Yazlık Pop</span></div>
+    <div class="genre"><img src="img/oyun-havasi.jpg" alt="" loading="lazy" /><span>Oyun Havası</span></div>
+  </div>
+
+  <div class="bottom">
+    <h2>Sevdiklerine adına özel bir şarkı yap</h2>
+    <a class="cta" href="https://apps.apple.com/tr/app/id6810834934" data-cta="bottom">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.64c-.02-2.28 1.86-3.38 1.95-3.43-1.06-1.55-2.71-1.76-3.3-1.79-1.4-.14-2.74.83-3.45.83-.72 0-1.81-.81-2.98-.79-1.53.02-2.94.89-3.73 2.26-1.59 2.76-.41 6.84 1.14 9.08.76 1.1 1.66 2.33 2.84 2.28 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.21.87-1.27 1.22-2.51 1.24-2.57-.03-.01-2.37-.91-2.38-3.63zM14.1 5.94c.63-.76 1.05-1.82.94-2.87-.9.04-2 .6-2.65 1.36-.58.67-1.09 1.75-.95 2.78 1 .08 2.03-.51 2.66-1.27z"/></svg>
+      <span><small>App Store'dan</small>İndir</span>
+    </a>
+  </div>
+
+  <footer>
+    <a href="../privacy.html">Gizlilik</a>·<a href="../terms.html">Koşullar</a>·<a href="../">Destek</a>
+    <p>© 2026 MuverAI</p>
+  </footer>
+</main>
+</body>
+</html>
